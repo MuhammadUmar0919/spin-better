@@ -1,0 +1,177 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS for phone input */
+@import 'react-phone-number-input/style.css';
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 220 26% 14%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 26% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 26% 16%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 26% 14%;
+
+    --secondary: 220 26% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 26% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 172 100% 50%;
+    --accent-foreground: 220 26% 14%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 26% 20%;
+    --input: 220 26% 12%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 26% 14%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 220 26% 14%;
+    --sidebar-accent: 220 26% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 26% 20%;
+    --sidebar-ring: 180 100% 50%;
+  }
+
+  .dark {
+    --background: 220 26% 14%;
+    --foreground: 0 0% 98%;
+    --card: 220 26% 16%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 26% 16%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 26% 14%;
+    --secondary: 220 26% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 26% 12%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 172 100% 50%;
+    --accent-foreground: 220 26% 14%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 26% 20%;
+    --input: 220 26% 12%;
+    --ring: 180 100% 50%;
+    --sidebar-background: 220 26% 14%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 220 26% 14%;
+    --sidebar-accent: 220 26% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 26% 20%;
+    --sidebar-ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Phone Input Styles */
+.phone-input-custom {
+  @apply w-full;
+}
+
+.phone-input-custom .PhoneInput {
+  @apply w-full;
+}
+
+.phone-input-custom .PhoneInputInput {
+  @apply w-full px-3 py-2 bg-background border border-primary/30 rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200;
+}
+
+.phone-input-custom .PhoneInputCountrySelect {
+  @apply bg-background border border-primary/30 rounded-l-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+.phone-input-custom .PhoneInputCountrySelectArrow {
+  @apply text-primary;
+}
+
+.phone-input-custom .PhoneInputCountryIcon {
+  @apply border border-primary/30;
+}
+
+/* RTL support for Arabic */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] .PhoneInput {
+  direction: ltr;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--card)) 50%, hsl(var(--secondary)) 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, hsla(var(--card), 0.8) 0%, hsla(var(--secondary), 0.6) 100%);
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/80;
+}
+
+/* Sonner toast custom styles */
+.sonner-loading {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
